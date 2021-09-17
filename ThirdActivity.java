@@ -11,8 +11,10 @@ package com.example.glaring;
 
 //import android.support.v7.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -22,6 +24,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -29,19 +32,40 @@ import java.util.List;
 
 public class ThirdActivity extends AppCompatActivity {
 
+    private String savePath = Environment.getExternalStorageDirectory() + "/history.txt";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_end);
 
         Intent intent =getIntent();
-        Bundle bundle= intent.getExtras();
-        String Brightness=bundle.getString("Brightness_f");
+        Bundle bundle = intent.getExtras();
+        String Brightness = bundle.getString("Brightness_f");
+        String History = bundle.getString("History");
 
         TextView btn = findViewById(R.id.textView6);
         btn.setText(Brightness);
 
+        saveFile(History);
+        TextView btn2 = findViewById(R.id.textView8);
+        btn2.setText(savePath);
+
     }
+
+    public boolean saveFile(String info){
+        String path = savePath;
+        try {
+            FileOutputStream fos = new FileOutputStream(path);
+            fos.write(info.getBytes());
+            fos.flush();
+            fos.close();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 
 //    /**
 //     *
