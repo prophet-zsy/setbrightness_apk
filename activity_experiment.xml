@@ -6,22 +6,115 @@
     android:padding="8dp"
     android:orientation="vertical" >
 
-    <Chronometer
-        android:id="@+id/chronometer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+<!--    <Chronometer-->
+<!--        android:id="@+id/chronometer"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content" />-->
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="122dp"
-        android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:text="打开亮度" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="120dp"
-        android:layout_height="58dp"
-        android:background="#ffffff"
-        android:text="关闭亮度" />
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|right"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/timerView"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:text="00:00:00:000" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:text="设置灭屏" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:text="下一亮度" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:text="确认舒适" />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:padding="2dp"
+            android:background="#ffffff"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_min"
+                android:src="@mipmap/minus"
+                android:layout_height="40dp"
+                android:layout_width="20dp"
+                android:background="@android:color/transparent" />
+
+            <EditText
+                android:id="@+id/show_bright"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:inputType="number"
+                android:text="0" />
+
+            <ImageButton
+                android:id="@+id/btn_add"
+                android:src="@mipmap/add"
+                android:layout_height="40dp"
+                android:layout_width="40dp"
+                android:background="@android:color/transparent" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>
+
+
+
+    <!--        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_margin="3dp"-->
+    <!--            android:padding="2dp"-->
+    <!--            android:background="#ffffff"-->
+    <!--            android:orientation="horizontal">-->
+
+    <!--            <com.example.glaring.AddView-->
+    <!--                android:id="@+id/add_view"-->
+    <!--                android:layout_width="50dp"-->
+    <!--                android:layout_height="50dp"-->
+    <!--                android:layout_gravity="center_vertical"-->
+    <!--                android:background="#ffffff" />-->
+
+    <!--            <EditText-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center_vertical"-->
+    <!--                android:layout_margin="3dp"-->
+    <!--                android:background="@null"-->
+    <!--                android:inputType="number"-->
+    <!--                android:text="0" />-->
+
+    <!--            <com.example.glaring.RemoveView-->
+    <!--                android:id="@+id/remove_view"-->
+    <!--                android:layout_width="50dp"-->
+    <!--                android:layout_height="50dp"-->
+    <!--                android:layout_gravity="center_vertical"-->
+    <!--                android:background="#ffffff" />-->
+
+    <!--        </LinearLayout>-->
